@@ -20,7 +20,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -87,7 +87,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -155,7 +155,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -222,7 +222,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -299,7 +299,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -372,7 +372,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -484,7 +484,7 @@
         "allFormat": "pipe",
         "current": {
         },
-        "datasource": "[DataSource]",
+        "datasource": "Prometheus",
         "includeAll": true,
         "multi": false,
         "multiFormat": "glob",
@@ -498,7 +498,7 @@
         "allFormat": "regex wildcard",
         "current": {
         },
-        "datasource": "[DataSource]",
+        "datasource": "Prometheus",
         "includeAll": true,
         "multi": true,
         "multiFormat": "pipe",
@@ -513,7 +513,7 @@
         "current": {
           "text": "All"
         },
-        "datasource": "[DataSource]",
+        "datasource": "Prometheus",
         "includeAll": true,
         "multi": true,
         "multiFormat": "pipe",
@@ -568,12 +568,12 @@
           "text": "All",
           "value": ".*"
         },
-        "datasource": "[DataSource]",
+        "datasource": "Prometheus",
         "includeAll": true,
         "multi": true,
         "multiFormat": "regex values",
         "name": "keyspace",
-        "query": "cassandra_ColumnFamily_CoordinatorScanLatency{servicename=\"$Cluster\"}",
+        "query": "cassandra_Table_CoordinatorScanLatency{servicename=\"$Cluster\"}",
         "refresh": true,
         "regex": "/keyspace=\"([^:\"]+)/",
         "type": "query"

@@ -1,7 +1,7 @@
 {
   "id": 897,
-  "title": "Cassandra.ReplicaRequestsColumnFamily",
-  "originalTitle": "Cassandra.ReplicaRequestsColumnFamily",
+  "title": "Cassandra.ReplicaRequestsTable",
+  "originalTitle": "Cassandra.ReplicaRequestsTable",
   "tags": [
     "Cassandra",
     "Cassibility"
@@ -20,7 +20,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -61,11 +61,11 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(cassandra_ColumnFamily_ReadLatency{ColumnFamily=~\"$ColumnFamily\", ColumnFamily!=\"\",keyspace=~\"$Keyspace\",Percentile=~\"$Percentile\",servicename=\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\"} [4m])",
+              "expr": "irate(cassandra_Table_ReadLatency{Table=~\"$Table\", Table!=\"\",keyspace=~\"$Keyspace\",Percentile=~\"$Percentile\",servicename=\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\"} [4m])",
               "hide": false,
               "interval": "1m",
               "intervalFactor": 1,
-              "legendFormat": "{{instance}}-{{ColumnFamily}}",
+              "legendFormat": "{{instance}}-{{Table}}",
               "metric": "",
               "refId": "A",
               "step": 60,
@@ -90,7 +90,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -130,11 +130,11 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(cassandra_ColumnFamily_RangeLatency{ColumnFamily=~\"$ColumnFamily\",ColumnFamily!=\"\",keyspace=~\"$Keyspace\",Percentile=~\"$Percentile\",servicename=\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\"} [4m])",
+              "expr": "irate(cassandra_Table_RangeLatency{Table=~\"$Table\",Table!=\"\",keyspace=~\"$Keyspace\",Percentile=~\"$Percentile\",servicename=\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\"} [4m])",
               "hide": false,
               "interval": "1m",
               "intervalFactor": 1,
-              "legendFormat": "{{instance}} - {{ColumnFamily}}",
+              "legendFormat": "{{instance}} - {{Table}}",
               "metric": "",
               "refId": "A",
               "step": 60,
@@ -159,7 +159,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -199,11 +199,11 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(cassandra_ColumnFamily_WriteLatency{ColumnFamily=~\"$ColumnFamily\",ColumnFamily!=\"\",keyspace=~\"$Keyspace\",Percentile=~\"$Percentile\",servicename=\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\"} [4m]) ",
+              "expr": "irate(cassandra_Table_WriteLatency{Table=~\"$Table\",Table!=\"\",keyspace=~\"$Keyspace\",Percentile=~\"$Percentile\",servicename=\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\"} [4m]) ",
               "hide": false,
               "interval": "1m",
               "intervalFactor": 1,
-              "legendFormat": "{{instance}} - {{ColumnFamily}}",
+              "legendFormat": "{{instance}} - {{Table}}",
               "metric": "",
               "refId": "A",
               "step": 60,
@@ -237,7 +237,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -277,11 +277,11 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "sum(irate(cassandra_ColumnFamily_ReadLatency{servicename=~\"$Cluster\",instance=~\"$Instance\",ColumnFamily=~\"$ColumnFamily\",ColumnFamily!=\"\",keyspace=~\"$Keyspace\",function=\"Count\",datacenter=~\"$DC\"} [4m])) by ($GroupBy,ColumnFamily) ",
+              "expr": "sum(irate(cassandra_Table_ReadLatency{servicename=~\"$Cluster\",instance=~\"$Instance\",Table=~\"$Table\",Table!=\"\",keyspace=~\"$Keyspace\",function=\"Count\",datacenter=~\"$DC\"} [4m])) by ($GroupBy,Table) ",
               "hide": false,
               "interval": "1m",
               "intervalFactor": 1,
-              "legendFormat": "{{$GroupBy}} - {{ColumnFamily}}",
+              "legendFormat": "{{$GroupBy}} - {{Table}}",
               "metric": "",
               "refId": "A",
               "step": 60,
@@ -306,7 +306,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -346,11 +346,11 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "sum(irate(cassandra_ColumnFamily_RangeLatency{servicename=~\"$Cluster\",instance=~\"$Instance\",ColumnFamily=~\"$ColumnFamily\",ColumnFamily!=\"\",keyspace=~\"$Keyspace\",function=\"Count\",datacenter=~\"$DC\"} [4m])) by ($GroupBy,ColumnFamily) ",
+              "expr": "sum(irate(cassandra_Table_RangeLatency{servicename=~\"$Cluster\",instance=~\"$Instance\",Table=~\"$Table\",Table!=\"\",keyspace=~\"$Keyspace\",function=\"Count\",datacenter=~\"$DC\"} [4m])) by ($GroupBy,Table) ",
               "hide": false,
               "interval": "1m",
               "intervalFactor": 1,
-              "legendFormat": "{{$GroupBy}} - {{ColumnFamily}}",
+              "legendFormat": "{{$GroupBy}} - {{Table}}",
               "metric": "",
               "refId": "A",
               "step": 60,
@@ -375,7 +375,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -415,7 +415,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "sum(irate(cassandra_ColumnFamily_WriteLatency{ColumnFamily=~\"$ColumnFamily\",keyspace=~\"$Keyspace\",function=\"Count\",datacenter=~\"$DC\"} [4m])) by ($GroupBy)",
+              "expr": "sum(irate(cassandra_Table_WriteLatency{Table=~\"$Table\",keyspace=~\"$Keyspace\",function=\"Count\",datacenter=~\"$DC\"} [4m])) by ($GroupBy)",
               "hide": false,
               "interval": "1m",
               "intervalFactor": 1,
@@ -444,7 +444,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -484,11 +484,11 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "sum(irate(cassandra_ColumnFamily_SpeculativeRetries{ColumnFamily=~\"$ColumnFamily\",keyspace=~\"$Keyspace\",servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\",ColumnFamily!=\"\" }[4m]))  by ($GroupBy,ColumnFamily) ",
+              "expr": "sum(irate(cassandra_Table_SpeculativeRetries{Table=~\"$Table\",keyspace=~\"$Keyspace\",servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\",Table!=\"\" }[4m]))  by ($GroupBy,Table) ",
               "hide": false,
               "interval": "1m",
               "intervalFactor": 1,
-              "legendFormat": "{{$GroupBy}}-{{ColumnFamily}}",
+              "legendFormat": "{{$GroupBy}}-{{Table}}",
               "metric": "",
               "refId": "A",
               "step": 60,
@@ -497,7 +497,7 @@
           ],
           "timeFrom": null,
           "timeShift": null,
-          "title": "SpeculativeRetries By Node For ColumnFamily Reads Per Second",
+          "title": "SpeculativeRetries By Node For Table Reads Per Second",
           "tooltip": {
             "shared": true,
             "value_type": "cumulative"
@@ -522,7 +522,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -563,11 +563,11 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "cassandra_ColumnFamily_TombstoneScannedHistogram{ColumnFamily=~\"$ColumnFamily\",ColumnFamily!=\"\",keyspace=~\"$Keyspace\",Percentile=\"$Percentile\",servicename=\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\" }",
+              "expr": "cassandra_Table_TombstoneScannedHistogram{Table=~\"$Table\",Table!=\"\",keyspace=~\"$Keyspace\",Percentile=\"$Percentile\",servicename=\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\" }",
               "hide": false,
               "interval": "1m",
               "intervalFactor": 1,
-              "legendFormat": "{{instance}} - {{ColumnFamily}}",
+              "legendFormat": "{{instance}} - {{Table}}",
               "metric": "",
               "refId": "A",
               "step": 60,
@@ -592,7 +592,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -635,11 +635,11 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "cassandra_ColumnFamily_SSTablesPerReadHistogram{ColumnFamily=~\"$ColumnFamily\",ColumnFamily!=\"\",keyspace=~\"$Keyspace\",Percentile=~\"$Percentile\",servicename=\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\" }",
+              "expr": "cassandra_Table_SSTablesPerReadHistogram{Table=~\"$Table\",Table!=\"\",keyspace=~\"$Keyspace\",Percentile=~\"$Percentile\",servicename=\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\" }",
               "hide": false,
               "interval": "1m",
               "intervalFactor": 1,
-              "legendFormat": "{{instance}} - {{ColumnFamily}}",
+              "legendFormat": "{{instance}} - {{Table}}",
               "metric": "",
               "refId": "A",
               "step": 60,
@@ -664,7 +664,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -704,10 +704,10 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "cassandra_ColumnFamily_BloomFilterFalseRatio{ColumnFamily=~\"$ColumnFamily\",ColumnFamily!=\"\",keyspace=~\"$Keyspace\",servicename=\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\"}",
+              "expr": "cassandra_Table_BloomFilterFalseRatio{Table=~\"$Table\",Table!=\"\",keyspace=~\"$Keyspace\",servicename=\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\"}",
               "interval": "1m",
               "intervalFactor": 1,
-              "legendFormat": "{{instance}} - {{ColumnFamily}}",
+              "legendFormat": "{{instance}} - {{Table}}",
               "refId": "A",
               "step": 60
             }
@@ -730,7 +730,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -770,11 +770,11 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "cassandra_ColumnFamily_WaitingOnFreeMemtableSpace{ColumnFamily=~\"$ColumnFamily\",keyspace=~\"$Keyspace\",Percentile=~\"$Percentile\",servicename=\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\" } ",
+              "expr": "cassandra_Table_WaitingOnFreeMemtableSpace{Table=~\"$Table\",keyspace=~\"$Keyspace\",Percentile=~\"$Percentile\",servicename=\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\" } ",
               "hide": false,
               "interval": "1m",
               "intervalFactor": 1,
-              "legendFormat": "{{instance}} - {{ColumnFamily}}",
+              "legendFormat": "{{instance}} - {{Table}}",
               "metric": "",
               "refId": "A",
               "step": 60,
@@ -799,7 +799,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "decimals": null,
           "editable": true,
           "error": false,
@@ -904,7 +904,7 @@
     "list": [
       {
         "allFormat": "regex wildcard",
-        "datasource": "[DataSource]",
+        "datasource": "Prometheus",
         "includeAll": false,
         "multi": false,
         "multiFormat": "pipe",
@@ -921,14 +921,14 @@
           "text": "All",
           "value": ".*"
         },
-        "datasource": "[DataSource]",
+        "datasource": "Prometheus",
         "hideLabel": false,
         "includeAll": true,
         "label": "",
         "multi": true,
         "multiFormat": "pipe",
         "name": "DC",
-        "query": "cassandra_ColumnFamily_ReadLatency{servicename='$Cluster'}",
+        "query": "cassandra_Table_ReadLatency{servicename='$Cluster'}",
         "refresh": true,
         "refresh_on_load": true,
         "regex": "/datacenter=\"([^:\"]+)/",
@@ -939,12 +939,12 @@
         "current": {
           "text": "All"
         },
-        "datasource": "[DataSource]",
+        "datasource": "Prometheus",
         "includeAll": true,
         "multi": true,
         "multiFormat": "pipe",
         "name": "Instance",
-        "query": "cassandra_ColumnFamily_ReadLatency{datacenter=~'$DC',servicename='$Cluster'}",
+        "query": "cassandra_Table_ReadLatency{datacenter=~'$DC',servicename='$Cluster'}",
         "refresh": true,
         "refresh_on_load": true,
         "regex": "/instance=\"([^:\"]+)/",
@@ -989,12 +989,12 @@
           "text": "99",
           "value": "99"
         },
-        "datasource": "[DataSource]",
+        "datasource": "Prometheus",
         "includeAll": false,
         "multi": false,
         "multiFormat": "glob",
         "name": "Percentile",
-        "query": "cassandra_ColumnFamily_CoordinatorScanLatency{servicename=\"$Cluster\"}",
+        "query": "cassandra_Table_CoordinatorScanLatency{servicename=\"$Cluster\"}",
         "refresh": true,
         "refresh_on_load": true,
         "regex": "/Percentile=\"([^:\"]+)/",
@@ -1002,12 +1002,12 @@
       },
       {
         "allFormat": "regex wildcard",
-        "datasource": "[DataSource]",
+        "datasource": "Prometheus",
         "includeAll": true,
         "multi": false,
         "multiFormat": "glob",
         "name": "Keyspace",
-        "query": "cassandra_ColumnFamily_CoordinatorScanLatency{servicename=\"$Cluster\"}",
+        "query": "cassandra_Table_CoordinatorScanLatency{servicename=\"$Cluster\"}",
         "refresh": true,
         "refresh_on_load": true,
         "regex": "/keyspace=\"([^:\"]+)/",
@@ -1019,15 +1019,15 @@
           "text": "All",
           "value": ".*"
         },
-        "datasource": "[DataSource]",
+        "datasource": "Prometheus",
         "includeAll": true,
         "multi": false,
         "multiFormat": "glob",
-        "name": "ColumnFamily",
-        "query": "cassandra_ColumnFamily_CompressionRatio{servicename=\"$Cluster\",keyspace=~\"$Keyspace\"}",
+        "name": "Table",
+        "query": "cassandra_Table_CompressionRatio{servicename=\"$Cluster\",keyspace=~\"$Keyspace\"}",
         "refresh": true,
         "refresh_on_load": true,
-        "regex": "/ColumnFamily=\"([^:\"]+)/",
+        "regex": "/Table=\"([^:\"]+)/",
         "type": "query"
       }
     ]

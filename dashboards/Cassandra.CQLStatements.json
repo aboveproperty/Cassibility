@@ -20,7 +20,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -91,7 +91,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -162,7 +162,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "decimals": null,
           "editable": true,
           "error": false,
@@ -234,7 +234,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -305,7 +305,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -414,7 +414,7 @@
         "allFormat": "pipe",
         "current": {
         },
-        "datasource": "[DataSource]",
+        "datasource": "Prometheus",
         "includeAll": false,
         "multi": false,
         "multiFormat": "pipe",
@@ -431,7 +431,7 @@
           "text": "All",
           "value": ".*"
         },
-        "datasource": "[DataSource]",
+        "datasource": "Prometheus",
         "hideLabel": false,
         "includeAll": true,
         "label": "",
@@ -449,7 +449,7 @@
         "current": {
           "text": "All"
         },
-        "datasource": "[DataSource]",
+        "datasource": "Prometheus",
         "includeAll": true,
         "multi": true,
         "multiFormat": "pipe",

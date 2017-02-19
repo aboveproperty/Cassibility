@@ -20,7 +20,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -97,7 +97,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -165,7 +165,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -233,7 +233,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -301,7 +301,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -349,7 +349,7 @@
               "metric": "",
               "refId": "A",
               "step": 60,
-              "target": "$graphFunction(rate(cassandra_ColumnFamily_ReadLatency{ColumnFamily=~\"$ColumnFamily\",keyspace=\"$keyspace\",function=\"$function\",servicename=\"$Cluster\",datacenter=\"$DC\",instance=~\"$instance\" }[2m])) by ($groupBy)",
+              "target": "$graphFunction(rate(cassandra_Table_ReadLatency{Table=~\"$Table\",keyspace=\"$keyspace\",function=\"$function\",servicename=\"$Cluster\",datacenter=\"$DC\",instance=~\"$instance\" }[2m])) by ($groupBy)",
               "textEditor": true
             }
           ],
@@ -371,7 +371,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -419,7 +419,7 @@
               "metric": "",
               "refId": "A",
               "step": 60,
-              "target": "$graphFunction(rate(cassandra_ColumnFamily_ReadLatency{ColumnFamily=~\"$ColumnFamily\",keyspace=\"$keyspace\",function=\"$function\",servicename=\"$Cluster\",datacenter=\"$DC\",instance=~\"$instance\" }[2m])) by ($groupBy)",
+              "target": "$graphFunction(rate(cassandra_Table_ReadLatency{Table=~\"$Table\",keyspace=\"$keyspace\",function=\"$function\",servicename=\"$Cluster\",datacenter=\"$DC\",instance=~\"$instance\" }[2m])) by ($groupBy)",
               "textEditor": true
             }
           ],
@@ -441,7 +441,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -518,7 +518,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -586,7 +586,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -654,7 +654,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -722,7 +722,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -790,7 +790,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -858,7 +858,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -935,7 +935,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -1003,7 +1003,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -1071,7 +1071,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -1139,7 +1139,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -1216,7 +1216,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -1284,7 +1284,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -1361,7 +1361,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -1429,7 +1429,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -1533,7 +1533,7 @@
     "list": [
       {
         "allFormat": "pipe",
-        "datasource": "[DataSource]",
+        "datasource": "Prometheus",
         "includeAll": true,
         "multi": false,
         "multiFormat": "glob",
@@ -1549,7 +1549,7 @@
           "text": "All",
           "value": ".*"
         },
-        "datasource": "[DataSource]",
+        "datasource": "Prometheus",
         "includeAll": true,
         "multi": true,
         "multiFormat": "pipe",
@@ -1564,7 +1564,7 @@
         "current": {
           "text": "All"
         },
-        "datasource": "[DataSource]",
+        "datasource": "Prometheus",
         "includeAll": true,
         "multi": true,
         "multiFormat": "pipe",
@@ -1619,7 +1619,7 @@
           "text": "99",
           "value": "99"
         },
-        "datasource": "[DataSource]",
+        "datasource": "Prometheus",
         "includeAll": false,
         "multi": false,
         "multiFormat": "glob",
@@ -1656,19 +1656,19 @@
             "selected": false
           }
         ],
-        "query": "cassandra_ColumnFamily_CoordinatorScanLatency{servicename=\"$Cluster\"}",
+        "query": "cassandra_Table_CoordinatorScanLatency{servicename=\"$Cluster\"}",
         "refresh": true,
         "regex": "/Percentile=\"([^:\"]+)/",
         "type": "query"
       },
       {
         "allFormat": "regex wildcard",
-        "datasource": "[DataSource]",
+        "datasource": "Prometheus",
         "includeAll": true,
         "multi": false,
         "multiFormat": "glob",
         "name": "keyspace",
-        "query": "cassandra_ColumnFamily_CoordinatorScanLatency{servicename=\"$Cluster\"}",
+        "query": "cassandra_Table_CoordinatorScanLatency{servicename=\"$Cluster\"}",
         "refresh": true,
         "regex": "/keyspace=\"([^:\"]+)/",
         "type": "query"

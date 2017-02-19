@@ -20,7 +20,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -63,10 +63,10 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "cassandra_ColumnFamily_CompressionRatio{servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\", ColumnFamily=~\"$ColumnFamily\", ColumnFamily!=\"\"} ",
+              "expr": "cassandra_Table_CompressionRatio{servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\", Table=~\"$Table\", Table!=\"\"} ",
               "interval": "10m",
               "intervalFactor": 1,
-              "legendFormat": "{{instance}}:{{keyspace}}:{{ColumnFamily}}",
+              "legendFormat": "{{instance}}:{{keyspace}}:{{Table}}",
               "refId": "A",
               "step": 600
             }
@@ -100,7 +100,7 @@
             "{}": "#508642"
           },
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -143,11 +143,11 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "cassandra_ColumnFamily_LiveDiskSpaceUsed{servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\", ColumnFamily=~\"$ColumnFamily\", ColumnFamily!=\"\"} ",
+              "expr": "cassandra_Table_LiveDiskSpaceUsed{servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\", Table=~\"$Table\", Table!=\"\"} ",
               "hide": false,
               "interval": "10m",
               "intervalFactor": 1,
-              "legendFormat": "{{instance}}:{{keyspace}}:{{ColumnFamily}}",
+              "legendFormat": "{{instance}}:{{keyspace}}:{{Table}}",
               "refId": "A",
               "step": 600,
               "target": ""
@@ -164,7 +164,7 @@
           ],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Live Disk Space Per ColumnFamily",
+          "title": "Live Disk Space Per Table",
           "tooltip": {
             "shared": true,
             "value_type": "cumulative"
@@ -180,7 +180,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -223,11 +223,11 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "cassandra_ColumnFamily_TotalDiskSpaceUsed{servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\", keyspace=~\"$Keyspace\", ColumnFamily=~\"$ColumnFamily\", ColumnFamily!=\"\"}",
+              "expr": "cassandra_Table_TotalDiskSpaceUsed{servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\", keyspace=~\"$Keyspace\", Table=~\"$Table\", Table!=\"\"}",
               "hide": false,
               "interval": "10m",
               "intervalFactor": 1,
-              "legendFormat": "{{instance}}-{{keyspace}}-{{ColumnFamily}}",
+              "legendFormat": "{{instance}}-{{keyspace}}-{{Table}}",
               "refId": "A",
               "step": 600,
               "target": ""
@@ -244,7 +244,7 @@
           ],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Total Disk Space Per ColumnFamily",
+          "title": "Total Disk Space Per Table",
           "tooltip": {
             "shared": true,
             "value_type": "cumulative"
@@ -269,7 +269,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -312,10 +312,10 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "cassandra_ColumnFamily_MinRowSize{servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\", ColumnFamily=~\"$ColumnFamily\",ColumnFamily!=\"\"}",
+              "expr": "cassandra_Table_MinRowSize{servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\", Table=~\"$Table\",Table!=\"\"}",
               "interval": "10m",
               "intervalFactor": 1,
-              "legendFormat": "{{instance}}:{{keyspace}}:{{ColumnFamily}}",
+              "legendFormat": "{{instance}}:{{keyspace}}:{{Table}}",
               "refId": "A",
               "step": 600,
               "target": ""
@@ -323,7 +323,7 @@
           ],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Min Row Size Per ColumnFamily",
+          "title": "Min Row Size Per Table",
           "tooltip": {
             "shared": true,
             "value_type": "cumulative"
@@ -339,7 +339,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -382,18 +382,18 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "cassandra_ColumnFamily_MeanRowSize{servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\", ColumnFamily=~\"$ColumnFamily\",ColumnFamily!=\"\"}",
+              "expr": "cassandra_Table_MeanRowSize{servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\", Table=~\"$Table\",Table!=\"\"}",
               "interval": "10m",
               "intervalFactor": 1,
-              "legendFormat": "{{instance}}:{{keyspace}}:{{ColumnFamily}}",
+              "legendFormat": "{{instance}}:{{keyspace}}:{{Table}}",
               "refId": "A",
               "step": 600,
-              "target": "avg(cassandra_ColumnFamily_MinRowSize{servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$instance\", ColumnFamily=~\"$ColumnFamily\"} ) by (instance).select metric"
+              "target": "avg(cassandra_Table_MinRowSize{servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$instance\", Table=~\"$Table\"} ) by (instance).select metric"
             }
           ],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Mean Row Size Per ColumnFamily",
+          "title": "Mean Row Size Per Table",
           "tooltip": {
             "shared": true,
             "value_type": "cumulative"
@@ -409,7 +409,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -452,10 +452,10 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "cassandra_ColumnFamily_MaxRowSize{servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\", ColumnFamily=~\"$ColumnFamily\"}",
+              "expr": "cassandra_Table_MaxRowSize{servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\", Table=~\"$Table\"}",
               "interval": "10m",
               "intervalFactor": 1,
-              "legendFormat": "{{instance}}:{{keyspace}}:{{ColumnFamily}}",
+              "legendFormat": "{{instance}}:{{keyspace}}:{{Table}}",
               "refId": "A",
               "step": 600,
               "target": ""
@@ -463,7 +463,7 @@
           ],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Max Row Size Per ColumnFamily",
+          "title": "Max Row Size Per Table",
           "tooltip": {
             "shared": true,
             "value_type": "cumulative"
@@ -488,7 +488,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -531,10 +531,10 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "cassandra_ColumnFamily_LiveSSTableCount{servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\", ColumnFamily=~\"$ColumnFamily\",ColumnFamily!=\"\"}",
+              "expr": "cassandra_Table_LiveSSTableCount{servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\", Table=~\"$Table\",Table!=\"\"}",
               "interval": "10m",
               "intervalFactor": 1,
-              "legendFormat": "{{instance}}:{{keyspace}}:{{ColumnFamily}}",
+              "legendFormat": "{{instance}}:{{keyspace}}:{{Table}}",
               "refId": "A",
               "step": 600,
               "target": ""
@@ -542,7 +542,7 @@
           ],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Live SSTable Count Per ColumnFamily",
+          "title": "Live SSTable Count Per Table",
           "tooltip": {
             "shared": true,
             "value_type": "cumulative"
@@ -566,7 +566,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -609,10 +609,10 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "cassandra_ColumnFamily_SnapshotsSize{servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\", ColumnFamily=~\"$ColumnFamily\",ColumnFamily!=\"\"}",
+              "expr": "cassandra_Table_SnapshotsSize{servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\", Table=~\"$Table\",Table!=\"\"}",
               "interval": "10m",
               "intervalFactor": 1,
-              "legendFormat": "{{instance}}:{{keyspace}}:{{ColumnFamily}}",
+              "legendFormat": "{{instance}}:{{keyspace}}:{{Table}}",
               "refId": "A",
               "step": 600,
               "target": ""
@@ -620,7 +620,7 @@
           ],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Snapshot Size Per ColumnFamily",
+          "title": "Snapshot Size Per Table",
           "tooltip": {
             "shared": true,
             "value_type": "cumulative"
@@ -636,7 +636,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "[DataSource]",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fill": 0,
@@ -679,7 +679,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "cassandra_ColumnFamily_SnapshotsSize{servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\",ColumnFamily=\"\"}",
+              "expr": "cassandra_Table_SnapshotsSize{servicename=~\"$Cluster\",datacenter=~\"$DC\",instance=~\"$Instance\",Table=\"\"}",
               "interval": "10m",
               "intervalFactor": 1,
               "legendFormat": "{{instance}}",
@@ -742,7 +742,7 @@
     "list": [
       {
         "allFormat": "pipe",
-        "datasource": "[DataSource]",
+        "datasource": "Prometheus",
         "includeAll": false,
         "multi": false,
         "multiFormat": "glob",
@@ -756,7 +756,7 @@
         "allFormat": "glob",
         "current": {
         },
-        "datasource": "[DataSource]",
+        "datasource": "Prometheus",
         "includeAll": false,
         "multi": true,
         "multiFormat": "pipe",
@@ -771,7 +771,7 @@
         "current": {
           "text": "All"
         },
-        "datasource": "[DataSource]",
+        "datasource": "Prometheus",
         "includeAll": true,
         "multi": true,
         "multiFormat": "pipe",
@@ -787,12 +787,12 @@
           "text": "All",
           "value": ".*"
         },
-        "datasource": "[DataSource]",
+        "datasource": "Prometheus",
         "includeAll": true,
         "multi": false,
         "multiFormat": "glob",
         "name": "Keyspace",
-        "query": "cassandra_ColumnFamily_CoordinatorScanLatency{servicename=\"$Cluster\"}",
+        "query": "cassandra_Table_CoordinatorScanLatency{servicename=\"$Cluster\"}",
         "refresh": true,
         "regex": "/keyspace=\"([^:\"]+)/",
         "type": "query"
@@ -803,14 +803,14 @@
           "text": "All",
           "value": ".*"
         },
-        "datasource": "[DataSource]",
+        "datasource": "Prometheus",
         "includeAll": true,
         "multi": false,
         "multiFormat": "glob",
-        "name": "ColumnFamily",
-        "query": "cassandra_ColumnFamily_CompressionRatio{servicename=~\"$Cluster\",keyspace=~\"$Keyspace\"}",
+        "name": "Table",
+        "query": "cassandra_Table_CompressionRatio{servicename=~\"$Cluster\",keyspace=~\"$Keyspace\"}",
         "refresh": true,
-        "regex": "/ColumnFamily=\"([^:\"]+)/",
+        "regex": "/Table=\"([^:\"]+)/",
         "type": "query"
       }
     ]
